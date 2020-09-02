@@ -1,17 +1,35 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 
-{% block title %}Detail{% endblock title %} 
+{% block title %}Detail{% endblock title %}
 
 {% block content %}
-    <p>{{destination.name}}</p>
-    <p>{{destination.description}}</p>
-    <p>{{destination.activities}}</p>
-    <p><img src="{{destination.pretty_picture.url}}"></p>
-    <p>{{destination.optimal_visiting_season}}</p>
-    <a href="{% url 'destination-update' destination.id %}">
-        <button>Update</button>
-    </a>
-    <a href="{% url 'destination-delete' destination.id %}">
-        <button>Delete</button>
-    </a>
+<br /><br /><br /><br /><br /><br /><br /><br /><br />
+<div class="container">
+
+
+<div class="card text-center" style="border-style: solid;border-color:#6E5416;background-color:#6E5416;">
+  <img src="{{destination.pretty_picture.url}}" class="card-img-top" alt="...">
+  <div class="card-header">
+    <div class="home_title">
+      <h5 style="background-color:#6E5416; color:white;">{{destination.name}} </h5>
+    </div>
+  </div>
+  <div class="card-body">
+
+    <h4 class="card-text" style="background-color:#6E5416;color:white;">{{destination.description}}</h4>
+
+  </div>
+  <div class="card-footer " style="background-color:#6E5416;color:white;">
+  <h5>{{destination.optimal_visiting_season}}</h5>
+  </div>
+  <div class="mx-3">
+    <h3 class="mx-3">
+
+    <a href="{% url 'destination-update' destination.id %}" class="btn btn-outline-dark btn-lg my-3 mx-2 px-5" style="width: 300px;">Edit</a>
+    <a href="{% url 'destination-delete' destination.id %}" class="btn btn-dark btn-lg  my-3 mx-2 px-5" style="width: 300px;">Delete</a>
+    </h3></div>
+</div>
+  </div>
+
+
 {% endblock content %}

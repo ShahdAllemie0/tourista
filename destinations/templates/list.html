@@ -1,16 +1,121 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 
 {% block title %}List{% endblock title %}
 
 {% block content %}
 <br>
-<div class="row">
-  {% for destination in destinations %}
-  <a href="{% url 'destination-detail' destination.id %}">
-    <img src="{{destination.pretty_picture.url}}" />
-    <p>{{destination.name}}</p>
-    <p>{{destination.activities}}</p>
-  </a>
-  {% endfor %}
+
+<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+<div class="home_title">
+  <h2 style="color:#6E5416;">Let us take you away</h2>
 </div>
-{% endblock content %}
+<div class="home_title">
+  <h4 style="color:#6E5416;">with ATW <a href="#"><img src="/media/mylogo.png" class="align-self-center mr-3" style="height: 70px; width: 35px%;" /></a></h4>
+</div>
+
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br />
+<!-- why choose us? -->
+<div class="home_title">
+  <h5 style="color:#6E5416;">Why choose us? </h5><br />
+</div>
+<div class="intro ">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="intro_container">
+          <div class="row rounded-pill" style="background-color:#6E5416; padding:30px;padding-top:40px; color:white;" >
+
+            <!-- Intro Item -->
+            <div class="col-lg-4 intro_col">
+              <div class="intro_item d-flex flex-row align-items-end justify-content-start ">
+                <div class="intro_icon"><img src="/media/beach.svg" alt=""></div>
+                <div class="intro_content">
+                  <div class="intro_title " style="color:white;">All Favorite Destinations</div>
+                  <!-- <div class="intro_subtitle">
+                    <p>Nulla pretium tincidunt felis, nec.</p>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Intro Item -->
+            <div class="col-lg-4 intro_col " >
+              <div class="intro_item d-flex flex-row align-items-end justify-content-start">
+                <div class="intro_icon"><img src="/media/wallet.svg" alt=""></div>
+                <div class="intro_content">
+                  <div class="intro_title" style="color:white;">The Best Prices</div>
+                  <!-- <div class="intro_subtitle">
+                    <p>Sollicitudin mauris lobortis in.</p>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Intro Item -->
+            <div class="col-lg-4 intro_col" >
+              <div class="intro_item d-flex flex-row align-items-end justify-content-start">
+                <div class="intro_icon"><img src="/media/suitcase.svg" alt=""></div>
+                <div class="intro_content">
+                  <div class="intro_title" style="color:white;">Amazing Services</div>
+                  <!-- <div class="intro_subtitle">
+                    <p>Nulla pretium tincidunt felis, nec.</p>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- end -->
+<div style="border:5px solid #6E5416;">
+
+
+
+<div class="rounded-0" style=" padding:30px;padding-top:40px; color:white;">
+
+
+  <div class="home_title">
+    <h5 style="color:#6E5416;">Our destinations: </h5>
+  </div><br />
+  <div class="row " style="color:#6E5416">
+
+    {% for destination in destinations %}
+    <div class="col-xs-12 col-sm-12  col-md-6 col-lg-4 ">
+
+
+      <div class="card " style=" padding:18px; margin:10px; border:5px solid #6E5416;">
+        <img src="{{destination.pretty_picture.url}}" class="card-img-top" alt="..." style="height: 300px; width: 150px%; object-fit: cover;">
+        <div class="card-body">
+          <h4 class="card-title">{{destination.name}}</h4>
+          <p class="card-text">{{destination.activities}}.</p>
+        </div>
+
+        <div class="card-body" style="text-align:center;">
+          <a href="{% url 'destination-detail' destination.id %}" class="card-link"><button type="button" class="btn btn-outline-secondary btn-lg" style="background-color:#6E5416; color:white;">More details</button></a>
+
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+  </div>
+  </div>
+  {% endblock content %}

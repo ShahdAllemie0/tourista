@@ -4,9 +4,20 @@
 {% block title %}Create{% endblock title %}
 
 {% block content %}
+
+
+
+
+
+
+<br />   <br />   <br />   <br />   <br />   <br />   <br />  <br />  <br />  <br />  <br />  <br />  <br />
 <form action="{% url 'destination-create' %}" method="POST" enctype="multipart/form-data">
   {% csrf_token %}
-  {{form.as_p}}
-  <input type="submit" value="Create">
+  <div class="home_title">
+    <h5 style="color:#6E5416; padding:30px"">Add a new destination: </h5>
+  </div>
+  <h3 style="color:#6E5416;border:dashed;margin:30px; padding:30px"> {{form|crispy}}</h3>
+
+<h2 style="padding-left:30px;padding-right:30px">  <input type="submit" value="Add" class="btn btn-dark btn-lg btn-block" style="background-color:#6E5416; color:white;" ></h2>
 </form>
 {% endblock content %}

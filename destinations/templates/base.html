@@ -1,4 +1,4 @@
-<!doctype html> 
+<!doctype html>
 <html lang="en">
 {% load static %}
 
@@ -7,40 +7,124 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Add a link to the bootstrap CDN here -->
-  
-  
-  <!-- Uncomment the following line to include your custom CSS file -->
-  {% comment %} 
-    <link rel="stylesheet" type="text/css" href="{% static 'custom.css' %}"> 
-  {% endcomment %}
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{% static 'custom.css' %}">
   <title>{% block title %}{% endblock title %}</title>
 </head>
 
 <body>
-  
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="{% url 'destination-list' %}">Tourista</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'destination-create' %}">Add a destination</a>
-        </li>
-      </ul>
+
+<!-- NAV HERE -->
+  <nav class="nav">
+    <div class="container">
+      <div class="logo">
+        <a href="{% url 'destination-list' %}"><img src="/media/mylogo.png" class="align-self-center mr-3" style="height: 70px; width: 35px%;" /></a>
+      </div>
+      <div id="mainListDiv" class="main_list">
+        <ul class="navlinks">
+          <li><a href="{% url 'destination-list' %}" >Destinations</a></li>
+          <li><a href="{% url 'destination-create' %}" style="color:#6E5416;">Add Destination</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
   <!-- End Navbar -->
-
   <div class="container">
     {% block content %} {% endblock content %}
   </div>
 
+  <!-- Footer -->
+
+  <footer class="footer">
+    <hr />
+    <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/footer_1.jpg" data-speed="0.8"></div>
+    <div class="container">
+
+      <div class="row footer_contact_row">
+        <div class="col-xl-10 offset-xl-1">
+          <div class="row">
+
+            <!-- Footer Contact Item -->
+            <div class="col-xl-4 footer_contact_col">
+              <div class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
+                <div class="footer_contact_icon"><img src="/media/sign.svg" alt=""></div>
+                <div class="footer_contact_title" style="color:#6E5416;">call us</div>
+                <div class="footer_contact_list">
+                  <ul>
+                    <li style="color:#6E5416;">Office Landline: +966 11 200 0000</li>
+                    <li style="color:#6E5416;">Mobile: +966 540 000 0000</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer Contact Item -->
+            <div class="col-xl-4 footer_contact_col">
+              <div class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
+                <div class="footer_contact_icon"><img src="/media/trekking.svg" alt=""></div>
+                <div class="footer_contact_title" style="color:#6E5416;">come & drop by</div>
+                <div class="footer_contact_list">
+                  <ul style="max-width:190px">
+                    <li style="color:#6E5416;">4124 Salmaa Street, Riyadh 12991</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer Contact Item -->
+            <div class="col-xl-4 footer_contact_col">
+              <div class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
+                <div class="footer_contact_icon"><img src="/media/around.svg" alt=""></div>
+                <div class="footer_contact_title" style="color:#6E5416;">send us a message</div>
+                <div class="footer_contact_list">
+                  <ul>
+                    <li style="color:#6E5416;">shahdallemie@gmail.com</li>
+                    <li style="color:#6E5416;">Office@atw.com</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col text-center">
+      Copyright &copy; All rights reserved <i class="fa fa-heart-o" aria-hidden="true"></i> by ShahdAllemie
+    </div>
+  </footer>
+  </div>
+
+
+
   <!-- Add your bootstrap script tags here -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <!-- Jquery needed -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="js/scripts.js"></script>
+
+  <!-- Function used to shrink nav bar removing paddings and adding black background -->
+  <script>
+    $(window).scroll(function() {
+      if ($(document).scrollTop() > 50) {
+        $('.nav').addClass('affix');
+        console.log("OK");
+      } else {
+        $('.nav').removeClass('affix');
+      }
+    });
+  </script>
+  <script>
+    $('.navTrigger').click(function() {
+      $(this).toggleClass('active');
+      console.log("Clicked menu");
+      $("#mainListDiv").toggleClass("show_list");
+      $("#mainListDiv").fadeIn();
+
+    });
+  </script>
 
 </body>
 
